@@ -1,6 +1,11 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import os
 from embedchain import App
 import streamlit as st
+
 
 bistec_bot = App()
 
