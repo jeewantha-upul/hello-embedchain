@@ -1,8 +1,11 @@
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
 import os
+import sys
+
+# Stream lit cloud sqlite version upgrade
+if sys.platform  != 'darwin':
+    __import__('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from embedchain import App
 import streamlit as st
 
@@ -35,10 +38,10 @@ if prompt := st.chat_input():
     bistec_bot.add("https://bistecglobal.com/")
     bistec_bot.add("https://bistecglobal.com/life/")
     bistec_bot.add("https://bistecglobal.com/case-studies/")
-    
+
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
     response = bistec_bot.query(prompt)
-    st.session_state.messages.append(msg)
+    st.session_state.messages.append({"role": "assistant", "content": response})
     st.chat_message("assistant").write(response)
