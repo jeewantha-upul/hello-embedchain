@@ -7,11 +7,6 @@ from embedchain import App
 import streamlit as st
 
 
-bistec_bot = App()
-
-bistec_bot.add("https://bistecglobal.com/")
-bistec_bot.add("https://bistecglobal.com/life/")
-bistec_bot.add("https://bistecglobal.com/case-studies/")
 
 
 with st.sidebar:
@@ -34,6 +29,13 @@ if prompt := st.chat_input():
         st.stop()
 
     os.environ["OPENAI_API_KEY"]  = openai_api_key
+
+    bistec_bot = App()
+
+    bistec_bot.add("https://bistecglobal.com/")
+    bistec_bot.add("https://bistecglobal.com/life/")
+    bistec_bot.add("https://bistecglobal.com/case-studies/")
+    
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
