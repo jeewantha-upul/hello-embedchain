@@ -35,9 +35,7 @@ if prompt := st.chat_input():
 
     bistec_bot = App()
 
-    bistec_bot.add("https://bistecglobal.com/")
-    bistec_bot.add("https://bistecglobal.com/life/")
-    bistec_bot.add("https://bistecglobal.com/case-studies/")
+    bistec_bot.add("leads.csv", data_type="csv")
 
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
