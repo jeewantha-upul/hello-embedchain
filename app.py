@@ -35,9 +35,11 @@ if prompt := st.chat_input():
 
     bistec_bot = App()
 
-    bistec_bot.add("https://bistecglobal.com/")
-    bistec_bot.add("https://bistecglobal.com/life/")
-    bistec_bot.add("https://bistecglobal.com/case-studies/")
+    DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'cvs'))
+    files = [f for f in os.listdir(DATA_DIR)]
+    for file in files:
+        print(file)
+        bistec_bot.add(os.path.join(DATA_DIR, file), data_type="pdf_file")
 
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
