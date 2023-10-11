@@ -18,7 +18,7 @@ with st.sidebar:
     "[View the source code](https://github.com/chan4lk/hello-embedchain/blob/main/app.py)"
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/chan4lk/hello-embedchain?quickstart=1)"
 
-st.title("💬 Chatbot") 
+st.title("💬 Bistec Chatbot") 
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
