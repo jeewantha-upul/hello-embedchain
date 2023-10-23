@@ -1,5 +1,5 @@
 # hello-embedchain
-[Demo](https://hello-embedchain.streamlit.app/)
+[[Demo](https://bistec-chat.streamlit.app/)]
 
 ## Create environment
 ```shell
