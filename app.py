@@ -8,9 +8,9 @@ import sys
 
 IMAGE_TO_URL = {
 
-    "sample_image_1": "./img/a.png",
+    "sample_image_1": "./img/c.jpg",
 
-    "sample_image_2": "./img/b.png",
+    "sample_image_2": "./img/d.jpg",
 
     # "sample_image_1": "https://user-images.githubusercontent.com/34196005/143309873-c0c1f31c-c42e-4a36-834e-da0a2336bb19.jpg",
 
@@ -88,7 +88,7 @@ with st.form(key="Streamlit Image Comparison"):
 
     with col2:
 
-        img1_text = st.text_input("Image one text:", value="YOLOX")
+        img1_text = st.text_input("Image one text:", value="A")
 
 
 
@@ -102,7 +102,7 @@ with st.form(key="Streamlit Image Comparison"):
 
     with col2:
 
-        img2_text = st.text_input("Image two text:", value="SAHI+YOLOX")
+        img2_text = st.text_input("Image two text:", value="B")
 
 
 
